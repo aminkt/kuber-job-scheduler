@@ -1,0 +1,14 @@
+commands:
+  consumer:
+    FunGo-App-Consumer-Share-EntityChangeLogger:
+      service: share
+      name: FunGo-App-Consumer-Share-EntityChangeLogger
+      type: consumer
+      command: consumer/consume FunGo-App-Consumer-Share-EntityChangeLogger
+      replica: 1
+    FunGo-App-Consumer-EventHandler-EventElasticSearchIndexer:
+      service: domain.event
+      name: FunGo-App-Consumer-EventHandler-EventElasticSearchIndexer
+      type: consumer
+      command: consumer/consume FunGo-App-Consumer-EventHandler-EventElasticSearchIndexer
+      replica: 2
